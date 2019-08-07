@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		17D1A3482A3CB0C1973EA924 /* Pods_TO_DO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C426FE9EBDF845E2E73AFB43 /* Pods_TO_DO.framework */; };
+		3F3B918922FB0C600024CA2C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3B918822FB0C600024CA2C /* UIColorExtension.swift */; };
+		3F427D4322F9F6C600E33357 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F427D4222F9F6C600E33357 /* DetailViewController.swift */; };
 		3F9C8B9022F8BBD400C28D8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9C8B8F22F8BBD400C28D8A /* AppDelegate.swift */; };
 		3F9C8B9222F8BBD400C28D8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9C8B9122F8BBD400C28D8A /* ViewController.swift */; };
 		3F9C8B9522F8BBD400C28D8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F9C8B9322F8BBD400C28D8A /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		144F1BACEED43954710D9D9C /* Pods-TO-DO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TO-DO.release.xcconfig"; path = "Pods/Target Support Files/Pods-TO-DO/Pods-TO-DO.release.xcconfig"; sourceTree = "<group>"; };
+		3F3B918822FB0C600024CA2C /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtension.swift; path = ../../../../.Trash/UIColorExtension.swift; sourceTree = "<group>"; };
+		3F427D4222F9F6C600E33357 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3F9C8B8C22F8BBD400C28D8A /* TO-DO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TO-DO.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F9C8B8F22F8BBD400C28D8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F9C8B9122F8BBD400C28D8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				3F9C8B8F22F8BBD400C28D8A /* AppDelegate.swift */,
+				3F3B918822FB0C600024CA2C /* UIColorExtension.swift */,
 				3F9C8B9122F8BBD400C28D8A /* ViewController.swift */,
 				3F9C8B9322F8BBD400C28D8A /* Main.storyboard */,
 				3F9C8B9622F8BBD500C28D8A /* Assets.xcassets */,
@@ -90,6 +95,7 @@
 				3F9C8B9B22F8BBD500C28D8A /* Info.plist */,
 				3F9C8BA322F8C4A600C28D8A /* ToDoTableViewCell.swift */,
 				3F9C8BA522F9BAF900C28D8A /* DataModel.swift */,
+				3F427D4222F9F6C600E33357 /* DetailViewController.swift */,
 			);
 			path = "TO-DO";
 			sourceTree = "<group>";
@@ -188,7 +194,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F9C8BA422F8C4A600C28D8A /* ToDoTableViewCell.swift in Sources */,
+				3F3B918922FB0C600024CA2C /* UIColorExtension.swift in Sources */,
 				3F9C8BA622F9BAF900C28D8A /* DataModel.swift in Sources */,
+				3F427D4322F9F6C600E33357 /* DetailViewController.swift in Sources */,
 				3F9C8B9222F8BBD400C28D8A /* ViewController.swift in Sources */,
 				3F9C8B9022F8BBD400C28D8A /* AppDelegate.swift in Sources */,
 			);

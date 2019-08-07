@@ -11,21 +11,25 @@ import Foundation
 
 class DataModel {
     
-    struct Task {
+    struct Task: Codable {
         var taskName: String
-        var taskData: NSData
+        var taskData: String
         
     }
     
     var Tasks: [Task] = []
     
-    func addTask(taskName: String, taskData: NSData) {
+    func addTask(taskName: String, taskData: String) {
         let task = Task(taskName: taskName, taskData: taskData)
         Tasks.append(task)
     }
     
     func deleteTask(numberOfRow: Int) {
         Tasks.remove(at: numberOfRow)
+    }
+    
+    func changeTaskName(newTaskName: String, numberOfRow: Int) {
+        Tasks[numberOfRow].taskName = newTaskName
     }
     
     
