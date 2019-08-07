@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		17D1A3482A3CB0C1973EA924 /* Pods_TO_DO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C426FE9EBDF845E2E73AFB43 /* Pods_TO_DO.framework */; };
 		3F3B918922FB0C600024CA2C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3B918822FB0C600024CA2C /* UIColorExtension.swift */; };
+		3F3B918B22FB2EFC0024CA2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F3B918A22FB2EFB0024CA2C /* Assets.xcassets */; };
 		3F427D4322F9F6C600E33357 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F427D4222F9F6C600E33357 /* DetailViewController.swift */; };
 		3F9C8B9022F8BBD400C28D8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9C8B8F22F8BBD400C28D8A /* AppDelegate.swift */; };
 		3F9C8B9222F8BBD400C28D8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9C8B9122F8BBD400C28D8A /* ViewController.swift */; };
 		3F9C8B9522F8BBD400C28D8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F9C8B9322F8BBD400C28D8A /* Main.storyboard */; };
-		3F9C8B9722F8BBD500C28D8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F9C8B9622F8BBD500C28D8A /* Assets.xcassets */; };
 		3F9C8B9A22F8BBD500C28D8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F9C8B9822F8BBD500C28D8A /* LaunchScreen.storyboard */; };
 		3F9C8BA422F8C4A600C28D8A /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9C8BA322F8C4A600C28D8A /* ToDoTableViewCell.swift */; };
 		3F9C8BA622F9BAF900C28D8A /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9C8BA522F9BAF900C28D8A /* DataModel.swift */; };
@@ -22,12 +22,12 @@
 /* Begin PBXFileReference section */
 		144F1BACEED43954710D9D9C /* Pods-TO-DO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TO-DO.release.xcconfig"; path = "Pods/Target Support Files/Pods-TO-DO/Pods-TO-DO.release.xcconfig"; sourceTree = "<group>"; };
 		3F3B918822FB0C600024CA2C /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtension.swift; path = ../../../../.Trash/UIColorExtension.swift; sourceTree = "<group>"; };
+		3F3B918A22FB2EFB0024CA2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F427D4222F9F6C600E33357 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3F9C8B8C22F8BBD400C28D8A /* TO-DO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TO-DO.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F9C8B8F22F8BBD400C28D8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F9C8B9122F8BBD400C28D8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3F9C8B9422F8BBD400C28D8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3F9C8B9622F8BBD500C28D8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F9C8B9922F8BBD500C28D8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F9C8B9B22F8BBD500C28D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F9C8BA322F8C4A600C28D8A /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
@@ -90,8 +90,8 @@
 				3F3B918822FB0C600024CA2C /* UIColorExtension.swift */,
 				3F9C8B9122F8BBD400C28D8A /* ViewController.swift */,
 				3F9C8B9322F8BBD400C28D8A /* Main.storyboard */,
-				3F9C8B9622F8BBD500C28D8A /* Assets.xcassets */,
 				3F9C8B9822F8BBD500C28D8A /* LaunchScreen.storyboard */,
+				3F3B918A22FB2EFB0024CA2C /* Assets.xcassets */,
 				3F9C8B9B22F8BBD500C28D8A /* Info.plist */,
 				3F9C8BA322F8C4A600C28D8A /* ToDoTableViewCell.swift */,
 				3F9C8BA522F9BAF900C28D8A /* DataModel.swift */,
@@ -111,6 +111,7 @@
 				3F9C8B8822F8BBD400C28D8A /* Sources */,
 				3F9C8B8922F8BBD400C28D8A /* Frameworks */,
 				3F9C8B8A22F8BBD400C28D8A /* Resources */,
+				EB60AE3A99AD152C3B20EA31 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -160,7 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F9C8B9A22F8BBD500C28D8A /* LaunchScreen.storyboard in Resources */,
-				3F9C8B9722F8BBD500C28D8A /* Assets.xcassets in Resources */,
+				3F3B918B22FB2EFC0024CA2C /* Assets.xcassets in Resources */,
 				3F9C8B9522F8BBD400C28D8A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,6 +185,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB60AE3A99AD152C3B20EA31 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TO-DO/Pods-TO-DO-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RevealingSplashView/RevealingSplashView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealingSplashView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TO-DO/Pods-TO-DO-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

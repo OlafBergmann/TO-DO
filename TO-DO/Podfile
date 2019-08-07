@@ -6,5 +6,5 @@ target 'TO-DO' do
   use_frameworks!
 
   # Pods for TO-DO
-
+	pod 'RevealingSplashView'
 end

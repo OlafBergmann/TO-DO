@@ -26,7 +26,10 @@ class DetailViewController: UIViewController {
     
     @IBAction func changeTaskNameBtnWasPressed(_ sender: Any) {
         
+        
+        view.endEditing(true)
         delegate?.passTaskName(taskName: taskTitlePlaceholder.text!,numberOfRow: numberOfRow)
+        self.navigationController?.popViewController(animated: true)
     }
     
     

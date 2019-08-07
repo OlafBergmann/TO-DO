@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RevealingSplashView
 
 protocol TaskNameDelegate {
     func passTaskName(taskName: String, numberOfRow: Int)
@@ -31,14 +32,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "logo")!, iconInitialSize: CGSize(width: 80, height: 80), backgroundColor: .toDoMiddleBlue)
+        
+        navigationController?.view.addSubview(revealingSplashView)
+        //self.view.addSubview(revealingSplashView)
+        revealingSplashView.animationType = SplashAnimationType.heartBeat
+        revealingSplashView.startAnimation()
+        
+        navigationItem.title = "TO-DO"
+        navigationController?.navigationBar.barTintColor = .white
+        
         //datePicker = UIDatePicker()
         //datePicker?.datePickerMode = .date
         //taskName.inputView = datePicker
-        navigationController?.navigationBar.barTintColor = .white
-        navigationItem.title = "TO-DO"
+        
         self.hideKeyboardOnTap(#selector(self.dismissKeyboard))
         //tableView.tableHeaderView?.backgroundColor = .black
         loadfromUserDefaults()
+        
+        revealingSplashView.heartAttack = true
+
     }
     
     @objc func dismissKeyboard() {
@@ -68,6 +82,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         guard let indexPath = tableView.indexPathForRow(at: point) else {
             return
         }
+        
         dataModel.deleteTask(numberOfRow: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .right)
         
@@ -105,6 +120,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let selectedView = UIView()
         selectedView.backgroundColor = .toDoFirstBlue
         cell?.selectedBackgroundView = selectedView
+        
         return cell!
     }
     
