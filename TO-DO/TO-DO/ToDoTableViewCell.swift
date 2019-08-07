@@ -15,6 +15,7 @@ protocol TableViewCell {
 class ToDoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var taskLbl: UILabel!
+    @IBOutlet weak var dateLbl: UILabel!
     
     var cellDelegate: TableViewCell?
     var index: IndexPath?
@@ -22,12 +23,12 @@ class ToDoTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
+
     }
 
     @IBAction func doneBtnWasClicked(_ sender: Any) {

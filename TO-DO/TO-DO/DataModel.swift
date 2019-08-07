@@ -13,14 +13,14 @@ class DataModel {
     
     struct Task: Codable {
         var taskName: String
-        var taskData: String
+        var taskDate: String
         
     }
     
     var Tasks: [Task] = []
     
-    func addTask(taskName: String, taskData: String) {
-        let task = Task(taskName: taskName, taskData: taskData)
+    func addTask(taskName: String, taskDate: String) {
+        let task = Task(taskName: taskName, taskDate: taskDate)
         Tasks.append(task)
     }
     
@@ -28,8 +28,9 @@ class DataModel {
         Tasks.remove(at: numberOfRow)
     }
     
-    func changeTaskName(newTaskName: String, numberOfRow: Int) {
+    func changeTaskNameAndDate(newTaskName: String,newDate: String, numberOfRow: Int) {
         Tasks[numberOfRow].taskName = newTaskName
+        Tasks[numberOfRow].taskDate = newDate
     }
     
     
