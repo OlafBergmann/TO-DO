@@ -14,14 +14,7 @@ protocol TaskNameDelegate {
     func passTaskName(taskName: String, date: String, numberOfRow: Int)
 }
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, TaskNameDelegate {
-    
-    func passTaskName(taskName: String, date: String, numberOfRow: Int) {
-        dataModel.changeTaskNameAndDate(newTaskName: taskName,newDate: date, numberOfRow: numberOfRow)
-        let indexPath = IndexPath(row: numberOfRow, section: 0)
-        tableView.reloadRows(at: [indexPath] , with: .fade)
-        saveInUserDefaults()
-    }
+class MainToDoListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, TaskNameDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -45,6 +38,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         navigationItem.title = "TO-DO"
         navigationController?.navigationBar.barTintColor = .white
         
+       tableView.tableFooterView = UIView(frame: .zero)
+        
         setupDatePicker()
         setupCurrentDay()
         self.hideKeyboardOnTap(#selector(self.dismissKeyboard))
@@ -53,12 +48,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         revealingSplashView.heartAttack = true
     }
     
+    func passTaskName(taskName: String, date: String, numberOfRow: Int) {
+        dataModel.changeTaskNameAndDate(newTaskName: taskName,newDate: date, numberOfRow: numberOfRow)
+        let indexPath = IndexPath(row: numberOfRow, section: 0)
+        tableView.reloadRows(at: [indexPath] , with: .fade)
+        saveInUserDefaults()
+    }
+    
     func setupDatePicker() {
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .date
         datePicker?.backgroundColor = .white
         date.inputView = datePicker
-        datePicker?.addTarget(self, action: #selector(ViewController.dateChanged(datePicker:)), for: .valueChanged)
+        datePicker?.addTarget(self, action: #selector(MainToDoListViewController.dateChanged(datePicker:)), for: .valueChanged)
     }
     
     func setupCurrentDay() {
@@ -66,6 +68,56 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         dateFormatter.dateFormat = "dd/MM/yyyy"
         let currentDate = Date()
         date.text = dateFormatter.string(from: currentDate)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let Storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let detailViewController = Storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        
+        detailViewController.taskString = dataModel.Tasks[indexPath.row].taskName
+        detailViewController.dateString = dataModel.Tasks[indexPath.row].taskDate
+        detailViewController.numberOfRow = indexPath.row
+        detailViewController.delegate = self
+        
+        self.navigationController?.pushViewController(detailViewController, animated: true)
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataModel.Tasks.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ToDoTableViewCell
+        cell?.taskLbl.text = dataModel.Tasks[indexPath.row].taskName
+        cell?.dateLbl.text = dataModel.Tasks[indexPath.row].taskDate
+        cell?.taskLbl.numberOfLines = 0
+        cell?.taskLbl.lineBreakMode = NSLineBreakMode.byWordWrapping
+        
+        let selectedView = UIView()
+        selectedView.backgroundColor = .none
+        cell?.selectedBackgroundView = selectedView
+        
+        return cell!
+    }
+    
+    @objc func dateChanged(datePicker: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        date.text = dateFormatter.string(from: datePicker.date)
+    }
+    
+    @IBAction func doneBtnWasPressed(_ sender: Any) {
+        let point = (sender as AnyObject).convert(CGPoint.zero, to: tableView)
+        guard let indexPath = tableView.indexPathForRow(at: point) else {
+            return
+        }
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        dataModel.deleteTask(numberOfRow: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .right)
+        
+        saveInUserDefaults()
     }
     
     @IBAction func addBtnWasPressed(_ sender: Any) {
@@ -86,85 +138,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     }
     
-    @objc func dateChanged(datePicker: UIDatePicker) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        date.text = dateFormatter.string(from: datePicker.date)
-        view.endEditing(true)
-    }
-    
-    @IBAction func doneBtnWasPressed(_ sender: Any) {
-        let point = (sender as AnyObject).convert(CGPoint.zero, to: tableView)
-        guard let indexPath = tableView.indexPathForRow(at: point) else {
-            return
-        }
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        dataModel.deleteTask(numberOfRow: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .right)
-        
-        saveInUserDefaults()
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let Storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let detailViewController = Storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        
-        detailViewController.taskString = dataModel.Tasks[indexPath.row].taskName
-        detailViewController.dateString = dataModel.Tasks[indexPath.row].taskDate
-        detailViewController.numberOfRow = indexPath.row
-        detailViewController.delegate = self
-        
-        self.navigationController?.pushViewController(detailViewController, animated: true)
-        
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return dataModel.Tasks.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ToDoTableViewCell
-        cell?.taskLbl.text = dataModel.Tasks[indexPath.row].taskName
-        cell?.dateLbl.text = dataModel.Tasks[indexPath.row].taskDate
-        cell?.taskLbl.numberOfLines = 0
-        cell?.taskLbl.lineBreakMode = NSLineBreakMode.byWordWrapping
-        
-        let selectedView = UIView()
-        selectedView.backgroundColor = .toDoFirstBlue
-        cell?.selectedBackgroundView = selectedView
-        
-        return cell!
-    }
-    
-    }
-
-extension ViewController {
-    
-    func saveInUserDefaults() { //save in userDefaults // Saving those kind of data into the UserDefault is not recommended
-        let array : [DataModel.Task] = dataModel.Tasks// whatever
-        if let data = try? PropertyListEncoder().encode(array) {
-            UserDefaults.standard.set(data, forKey: "SavedItemArray")
-        }
-    }
-    
-    func loadfromUserDefaults() { //load data from userDefaults
-        let defaults = UserDefaults.standard
-        if let data = defaults.data(forKey: "SavedItemArray") {
-            let array = try! PropertyListDecoder().decode([DataModel.Task].self, from: data)
-            dataModel.Tasks = array
-        }
-    }
-}
-
-extension UIViewController {
-    func hideKeyboardOnTap(_ selector: Selector) {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: selector)
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
-}
 

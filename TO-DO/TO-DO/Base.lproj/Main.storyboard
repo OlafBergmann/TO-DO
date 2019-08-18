@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="-633" y="100"/>
         </scene>
-        <!--View Controller-->
+        <!--Main To Do List View Controller-->
         <scene sceneID="Sty-ON-JuL">
             <objects>
-                <viewController id="De7-io-s5W" customClass="ViewController" customModule="TO_DO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="De7-io-s5W" customClass="MainToDoListViewController" customModule="TO_DO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qod-Jg-4FB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,10 +45,10 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jhm-te-zaA">
-                                            <rect key="frame" x="16" y="13.5" width="382" height="68"/>
+                                            <rect key="frame" x="16" y="13.5" width="568" height="68"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What do you have TO-DO?" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bPh-jv-86E">
-                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="30"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="568" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="8GT-wV-8P7"/>
                                                     </constraints>
@@ -57,7 +57,7 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose date of TO-DO" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dcm-xn-ZNx">
-                                                    <rect key="frame" x="0.0" y="38" width="382" height="30"/>
+                                                    <rect key="frame" x="0.0" y="38" width="568" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="J7e-Bi-KZh"/>
                                                     </constraints>
@@ -80,7 +80,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="70" id="JQB-ql-tOf" customClass="ToDoTableViewCell" customModule="TO_DO" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="70" id="JQB-ql-tOf" customClass="ToDoTableViewCell" customModule="TO_DO" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="123" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JQB-ql-tOf" id="Dl8-EK-RLx">

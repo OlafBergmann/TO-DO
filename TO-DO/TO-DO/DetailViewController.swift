@@ -33,7 +33,7 @@ class DetailViewController: UIViewController {
         datePicker?.datePickerMode = .date
         datePicker?.backgroundColor = .white
         datePlaceholder.inputView = datePicker
-        datePicker?.addTarget(self, action: #selector(ViewController.dateChanged(datePicker:)), for: .valueChanged)
+        datePicker?.addTarget(self, action: #selector(MainToDoListViewController.dateChanged(datePicker:)), for: .valueChanged)
     }
     
     @objc func dateChanged(datePicker: UIDatePicker) {
